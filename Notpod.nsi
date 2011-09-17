@@ -1,9 +1,9 @@
 # Installer script for Notpod
-!define PRODUCT_NAME "Notpod"
-!define PRODUCT_VERSION "1.4"
+!define PRODUCT_NAME "iCherry Music Manager"
+!define PRODUCT_VERSION "1.0"
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "notpod-${PRODUCT_VERSION}-installer.exe"
+OutFile "icherrymm-${PRODUCT_VERSION}-installer.exe"
 
 InstallDir "$PROGRAMFILES\${PRODUCT_NAME}"
 BrandingText "${PRODUCT_NAME}"
@@ -29,7 +29,8 @@ BrandingText "${PRODUCT_NAME}"
         File "bin\Release\logging.xml"
         File "bin\Release\Interop.iTunesLib.dll"
         File "LICENSE.TXT"
-        createShortCut "$SMPROGRAMS\Notpod.lnk" "$INSTDIR\Notpod.exe"
+        createShortCut "$SMPROGRAMS\iCherry Music Manager\iCherry Music Manager.lnk" "$INSTDIR\Notpod.exe"
+        createShortCut "$SMPROGRAMS\iCherry Music Manager\Uninstall.lnk" "$INSTDIR\uninstaller.exe"
         
         # define uninstaller name
         writeUninstaller $INSTDIR\uninstaller.exe
