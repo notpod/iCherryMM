@@ -25,10 +25,10 @@
   </SyncPatterns>
   <Devices>
     <Device>
-      <Name>Example Configuration</Name>
+      <Name>My iCherry</Name>
       <MediaRoot>Music</MediaRoot>
       <SyncPattern>itunes</SyncPattern>
-      <RecognizePattern>AnUniqueFileForMyDevice.ita</RecognizePattern>
+      <RecognizePattern>icherry.np</RecognizePattern>
       <Playlist />
       <InitialTracks />
     </Device>
