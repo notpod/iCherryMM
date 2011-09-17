@@ -707,7 +707,7 @@ namespace Notpod
         private void ctxTrayHelp_Click(object sender, EventArgs e)
         {
             //Open URL in default browser
-            ProcessStartInfo info = new ProcessStartInfo("http://ita.sourceforge.net/help");
+            ProcessStartInfo info = new ProcessStartInfo("http://www.notpod.com/support/icherry");
             info.Verb = "open";
             Process.Start(info);
         }
