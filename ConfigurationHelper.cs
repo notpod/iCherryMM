@@ -67,13 +67,13 @@ namespace Notpod
 
 
             if (MessageBox.Show("Do you want me to import old device configuration from a previous version of "
-                                + "Notpod, or iTunes Agent?\n\nIf this is a fresh installation of Notpod, not "
+                                + "iCherry Music Manager?\n\nIf this is a fresh installation of iCherry Music Manager, not "
                                 + "an upgrade, you can safely choose 'No'.", "Upgrade device configuration?", 
                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 FolderBrowserDialog folders = new FolderBrowserDialog();
                 folders.ShowNewFolderButton = false;
-                folders.Description = "Please choose the installation folder of your pre Notpod installation";
+                folders.Description = "Please choose the installation folder of your pre iCherry Music Manager installation";
 
                 if (folders.ShowDialog() == DialogResult.OK)
                 {

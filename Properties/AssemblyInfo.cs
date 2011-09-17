@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Notpod")]
+[assembly: AssemblyTitle("iCherry Music Manager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jaran Nilsen")]
-[assembly: AssemblyProduct("Notpod")]
-[assembly: AssemblyCopyright("Copyright 2005-2010, Jaran Nilsen")]
+[assembly: AssemblyProduct("iCherry Music Manager")]
+[assembly: AssemblyCopyright("Copyright 2005-2011, Jaran Nilsen")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.4")]
-[assembly: AssemblyFileVersion("1.4")]
+[assembly: AssemblyVersion("1.0")]
+[assembly: AssemblyFileVersion("1.0")]

@@ -210,7 +210,7 @@ namespace Notpod
                 {
                     itunes = new iTunesAppClass();
                     string version = itunes.Version;
-                    SetStatusMessage("Notpod", "I have found iTunes (" + version
+                    SetStatusMessage("iCherry Music Manager", "I have found iTunes (" + version
                         + ") on your computer and I am ready to synchronize your devices.",
                         ToolTipIcon.Info);
                     SetEventHandlers();
@@ -227,7 +227,7 @@ namespace Notpod
                     }
                     else
                     {
-                        SetStatusMessage("Notpod", "An error occured while communicating with iTunes. Please "
+                        SetStatusMessage("iCherry Music Manager", "An error occured while communicating with iTunes. Please "
                             + "make sure iTunes is properly installed and running before restarting the application.",
                             ToolTipIcon.Error);
                         return false;
@@ -586,7 +586,7 @@ namespace Notpod
                     {
                         MessageBox.Show("I could not synchronize '" + device.Name + "' because "
                             + "the playlist does not exist! Try reconnecting the device. If the problem continues"
-                            + " please report the problem to the Notpod developers at http://www.sourceforge.net/projects/ita.",
+                            + " please report the problem to the iCherry Music Manager developers at http://www.notpod.com.",
                             "Internal synchronization error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         continue;
                     }

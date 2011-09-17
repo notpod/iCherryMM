@@ -145,9 +145,9 @@ namespace Notpod
             //Display a warning message about how the change of file structure works and how it 
             //inflicts any changes on the already managed devices.
             MessageBox.Show("Note that this setting only applies to devices not already managed "
-                + "by Notpod. If you want to change the file structure of a device already "
-                + "synchronized with Notpod you will have to clear the music folder of your "
-                + "device, including the '.itastruct' file, in order for Notpod to manage "
+                + "by iCherry Music Manager. If you want to change the file structure of a device already "
+                + "synchronized with iCherry Music Manager you will have to clear the music folder of your "
+                + "device, including the '.itastruct' file, in order for iCherry Music Manager to manage "
                 + "the device with the new structure.\n\nFor new devices the new structure setting "
                 + "will be applied upon first iTunes-to-device synchronization.", "Please note",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -272,7 +272,7 @@ namespace Notpod
         private void buttonNew_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this, "Please note that any media present in the folder specified as 'Music location on device' "
-                + "will be deleted upon the first synchronization by Notpod, unless "
+                + "will be deleted upon the first synchronization by iCherry Music Manager, unless "
                 + "this media matches any track added to the device's playlist in iTunes.\n\nIf "
                 + "the media already present on your device is of critical importance, please make sure you take a proper "
                 + "backup, or make sure it is located outside the folder you configure as the "

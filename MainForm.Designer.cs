@@ -47,10 +47,10 @@ namespace Notpod
         	this.itaTray.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
         	this.itaTray.BalloonTipText = "You may now attach compatible devices to your system. They will appear in iTunes " +
         	"as playlists where you can manage their tracks.";
-        	this.itaTray.BalloonTipTitle = "Notpod is now running";
+        	this.itaTray.BalloonTipTitle = "iCherry Music Manager is now running";
         	this.itaTray.ContextMenuStrip = this.contextTray;
         	this.itaTray.Icon = global::Notpod.Properties.Resources.ita_new;
-        	this.itaTray.Text = "Notpod";
+        	this.itaTray.Text = "iCherry Music Manager";
         	this.itaTray.Visible = true;
         	// 
         	// contextTray
@@ -85,7 +85,7 @@ namespace Notpod
         	// 
         	this.ctxTrayAbout.Name = "ctxTrayAbout";
         	this.ctxTrayAbout.Size = new System.Drawing.Size(209, 22);
-        	this.ctxTrayAbout.Text = "&About Notpod";
+        	this.ctxTrayAbout.Text = "&About iCherry Music Manager";
         	this.ctxTrayAbout.Click += new System.EventHandler(this.ctxTrayAbout_Click);
         	// 
         	// toolStripSeparator4
@@ -129,7 +129,7 @@ namespace Notpod
         	this.MaximizeBox = false;
         	this.Name = "MainForm";
         	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        	this.Text = "Notpod";
+        	this.Text = "iCherry Music Manager";
         	this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
         	this.Load += new System.EventHandler(this.MainForm_Load);
         	this.contextTray.ResumeLayout(false);
