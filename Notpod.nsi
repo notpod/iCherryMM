@@ -4,9 +4,9 @@
 !define MUI_ABORTWARNING
 !define MUI_ICON ".\Resources\ita-new.ico"
 !define MUI_UNICON ".\Resources\ita-new.ico"
-!define MUI_HEADERIMAGE
-!define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP ".\Resources\installer-header.bmp"
+#!define MUI_HEADERIMAGE
+#!define MUI_HEADERIMAGE_RIGHT
+#!define MUI_HEADERIMAGE_BITMAP ".\Resources\installer-header.bmp"
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 OutFile "icherrymm-${PRODUCT_VERSION}-installer.exe"
