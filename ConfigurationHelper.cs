@@ -23,7 +23,7 @@ namespace Notpod
         /// <returns></returns>
         public static bool MovePreNotpodConfiguration()
         {
-            MessageBox.Show("It seems that you have recently installed me, or upgraded me from iTunes Agent - my previous name. "
+            MessageBox.Show("It seems that you have recently installed me, or upgraded me from a previous version. "
                 + "I need to configure myself for this new version.\n\nIf you "
                 + "have existing configuration from an earlier version of the application, then I will help "
                 + "you copy this. Please click 'OK' to continue.",
