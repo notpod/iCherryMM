@@ -4,9 +4,6 @@
 !define MUI_ABORTWARNING
 !define MUI_ICON ".\Resources\ita-new.ico"
 !define MUI_UNICON ".\Resources\ita-new.ico"
-#!define MUI_HEADERIMAGE
-#!define MUI_HEADERIMAGE_RIGHT
-#!define MUI_HEADERIMAGE_BITMAP ".\Resources\installer-header.bmp"
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 OutFile "icherrymm-${PRODUCT_VERSION}-installer.exe"
@@ -43,12 +40,12 @@ BrandingText "${PRODUCT_NAME}"
 
 
         SetOutPath "$INSTDIR"
-        File "bin\Release\Notpod.exe"
+        File /oname=iCherryMusicManager.exe "bin\Release\Notpod.exe"
         File "bin\Release\log4net.dll"
         File "bin\Release\logging.xml"
         File "bin\Release\Interop.iTunesLib.dll"
         File "LICENSE.TXT"
-        createShortCut "$SMPROGRAMS\iCherry Music Manager\iCherry Music Manager.lnk" "$INSTDIR\Notpod.exe"
+        createShortCut "$SMPROGRAMS\iCherry Music Manager\iCherry Music Manager.lnk" "$INSTDIR\iCherryMusicManager.exe"
         createShortCut "$SMPROGRAMS\iCherry Music Manager\Uninstall.lnk" "$INSTDIR\uninstaller.exe"
         
         # define uninstaller name
@@ -62,9 +59,12 @@ BrandingText "${PRODUCT_NAME}"
     delete $INSTDIR\uninstaller.exe
 
     # now delete installed file
-    delete $INSTDIR\Notpod.exe
+    delete $INSTDIR\iCherryMusicManager.exe
     delete $INSTDIR\log4net.dll
     delete $INSTDIR\logging.xml
-    delete $INSTDIR\Interop.iTunesLib.dll
+    delete $INSTDIR\LICENSE.txt
+	delete $INSTDIR\icherrymm.log
+	delete $INSTDIR\Interop.iTunesLib.dll
+	delete $INSTDIR
 
  SectionEnd
