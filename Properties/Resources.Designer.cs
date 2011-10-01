@@ -124,7 +124,7 @@ namespace Notpod.Properties {
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;log4net&gt;
         ///  &lt;appender name=&quot;LogFile&quot; type=&quot;log4net.Appender.FileAppender&quot;&gt;
-        ///    &lt;file value=&quot;ita.log&quot; /&gt;
+        ///    &lt;file value=&quot;icherrymm.log&quot; /&gt;
         ///    &lt;appendToFile value=&quot;true&quot; /&gt;
         ///
         ///    &lt;layout type=&quot;log4net.Layout.PatternLayout&quot;&gt;
