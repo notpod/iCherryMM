@@ -96,7 +96,7 @@ namespace Notpod
                 l.Error(message, ex);
 
                 MessageBox.Show(message, "Configuration not available",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
                 return;
             }
@@ -125,7 +125,7 @@ namespace Notpod
                 l.Error(ex);
 
                 MessageBox.Show("Unable to locate list of known devices. The agent needs this list.\n\nReason for failure: " + ex.Message,
-                    "Missing list of devices", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "Missing list of devices", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
             finally
@@ -187,9 +187,10 @@ namespace Notpod
                 l.Error(ex);
 
                 MessageBox.Show(this, "Unable to create 'My Devices' folder. This may "
-                + "be due to iTunes being busy with an other operation. If this error "
-                + "continues to occur, please turn the option off in the Preferences dialog.\n\n(" + ex.Message + ")",
-                "Failed to create My Devices folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                + "be due to one or more applications being busy. Please close any "
+                                + "open dialogs before retrying. If this error "
+                                + "continues to occur, please turn the option off in the Preferences dialog.\n\n(" + ex.Message + ")",
+                                "Failed to create My Devices folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -197,7 +198,7 @@ namespace Notpod
         /// <summary>
         /// Creates connection to iTunes.
         /// </summary>
-        /// <returns>True if an instance of iTunes interface was successfully made, 
+        /// <returns>True if an instance of iTunes interface was successfully made,
         /// false otherwise.</returns>
         public bool CreateITunesInstance()
         {
@@ -210,9 +211,8 @@ namespace Notpod
                 {
                     itunes = new iTunesAppClass();
                     string version = itunes.Version;
-                    SetStatusMessage("iCherry Music Manager", "I have found iTunes (" + version
-                        + ") on your computer and I am ready to synchronize your devices.",
-                        ToolTipIcon.Info);
+                    SetStatusMessage("iCherry Music Manager", "I am ready to synchronize your devices!",
+                                     ToolTipIcon.Info);
                     SetEventHandlers();
                     retry = false;
                 }
@@ -220,16 +220,19 @@ namespace Notpod
                 {
                     l.Warn(ex);
 
-                    if (MessageBox.Show(this, "Unable to communicate with iTunes. Do you want to retry?\n\n("
-                        + ex.Message + ")", "Communication error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show(this, "Unable to communicate with your media software. Please make sure "
+                                        + "you close any open dialogs before you continue."
+                                        + "\n\nDo you want to retry?\n\n("
+                                        + ex.Message + ")", "Communication error", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         retry = true;
                     }
                     else
                     {
-                        SetStatusMessage("iCherry Music Manager", "An error occured while communicating with iTunes. Please "
-                            + "make sure iTunes is properly installed and running before restarting the application.",
-                            ToolTipIcon.Error);
+                        SetStatusMessage("iCherry Music Manager", "An error occured while communicating with your media software. Please "
+                                         + "make sure you have a supported media software installed and running before restarting the application.",
+                                         ToolTipIcon.Error);
                         return false;
                     }
                 }
@@ -296,8 +299,8 @@ namespace Notpod
                     l.Error(e);
 
                     MessageBox.Show("Failed to create list for device '" + device.Name
-                        + "'. You will not be able to synchronize this device with iTunes.",
-                        "Playlist error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    + "'. You will not be able to synchronize this device.",
+                                    "Playlist error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -343,7 +346,11 @@ namespace Notpod
                 {
                     l.Warn(comex);
 
-                    if (MessageBox.Show("Failed to get playlists from iTunes. This is most likely due to iTunes being busy or an open dialog. Do you want to try again?\n\n(" + comex.Message + ")", "Communication error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("Failed to get list of playlists. This is most likely due one or more applications being "
+                                        + "busy. Please make sure you close any open dialogs in "
+                                        + "before continuing.\n\nDo you want to try again?\n\n(" + comex.Message
+                                        + ")", "Communication error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        == DialogResult.Yes)
                     {
                         retry = true;
                     }
@@ -400,7 +407,7 @@ namespace Notpod
         {
             itunes.OnQuittingEvent += new _IiTunesEvents_OnQuittingEventEventHandler(OniTunesQuitEvent);
             itunes.OnAboutToPromptUserToQuitEvent
-                    += new _IiTunesEvents_OnAboutToPromptUserToQuitEventEventHandler(OniTunesQuitEvent);
+                += new _IiTunesEvents_OnAboutToPromptUserToQuitEventEventHandler(OniTunesQuitEvent);
         }
 
         /// <summary>
@@ -423,7 +430,7 @@ namespace Notpod
         {
             DriveInfo[] driveInfos = DriveInfo.GetDrives();
 
-            //Create a list of all removable drives, which are the only ones 
+            //Create a list of all removable drives, which are the only ones
             //of interest to Notpod.
             ArrayList interestingDrives = new ArrayList();
             foreach (DriveInfo di in driveInfos)
@@ -500,7 +507,7 @@ namespace Notpod
         }
 
         /// <summary>
-        /// Perform a simple check of the devices. Warn the user if a device 
+        /// Perform a simple check of the devices. Warn the user if a device
         /// is associated with a drive which may be a system drive.
         /// </summary>
         /// <returns>False if the user chooses to abort, true if all is good.</returns>
@@ -519,31 +526,31 @@ namespace Notpod
                     l.Warn(String.Format("Detected possible system drive for {0} ({1}).", device.Name, drive));
                     
                     DialogResult choice = MessageBox.Show("The device '" + device.Name
-                        + "' may reference a system hard drive. The drive currently associated"
-                        + " with this device is: " + drive + "\n\nIf you are sure this is "
-                        + "correct, you may continue. If you are unsure, or have misconfigured, "
-                        + "you should click 'Cancel' and make sure your device configuration is "
-                        + "correct before attempting a new synchronization.\n\nAre you sure you "
-                        + "want to continue?",
-                    "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                                                          + "' may reference a system hard drive. The drive currently associated"
+                                                          + " with this device is: " + drive + "\n\nIf you are sure this is "
+                                                          + "correct, you may continue. If you are unsure, or have misconfigured, "
+                                                          + "you should click 'Cancel' and make sure your device configuration is "
+                                                          + "correct before attempting a new synchronization.\n\nAre you sure you "
+                                                          + "want to continue?",
+                                                          "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
                     if (choice == DialogResult.Cancel)
                         return false;
-                
+                    
                 }
                 
                 if(CheckIfiTunesLibrary(drive))
                 {
-                    l.Warn(String.Format("Detected possible iTunes library location for {0} ({1}).", 
+                    l.Warn(String.Format("Detected possible music library location for {0} ({1}).",
                                          device.Name, drive));
                     
                     DialogResult choice = MessageBox.Show("The device '" + device.Name
-                        + "' may reference your local iTunes library. The drive currently associated"
-                        + " with this device is: " + drive + "\n\nIf you are sure this is "
-                        + "correct, you may continue. If you are unsure, or have misconfigured, "
-                        + "you should click 'Cancel' and make sure your device configuration is correct "
-                        + "before attempting a new synchronization.\n\nAre you sure you want to continue?",
-                    "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                                                          + "' may reference your local music library. The drive currently associated"
+                                                          + " with this device is: " + drive + "\n\nIf you are sure this is "
+                                                          + "correct, you may continue. If you are unsure, or have misconfigured, "
+                                                          + "you should click 'Cancel' and make sure your device configuration is correct "
+                                                          + "before attempting a new synchronization.\n\nAre you sure you want to continue?",
+                                                          "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
                     if (choice == DialogResult.Cancel)
                         return false;
@@ -564,8 +571,8 @@ namespace Notpod
             try
             {
                 // Create synchronizer and form.
-                ISynchronizer synchronizer = new StandardSynchronizer();                
-                synchronizer.Form = syncForm;                
+                ISynchronizer synchronizer = new StandardSynchronizer();
+                synchronizer.Form = syncForm;
 
                 while (keys.MoveNext())
                 {
@@ -585,9 +592,9 @@ namespace Notpod
                     if (playlist == null)
                     {
                         MessageBox.Show("I could not synchronize '" + device.Name + "' because "
-                            + "the playlist does not exist! Try reconnecting the device. If the problem continues"
-                            + " please report the problem to the iCherry Music Manager developers at http://www.notpod.com.",
-                            "Internal synchronization error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        + "the playlist does not exist! Try reconnecting the device. If the problem continues"
+                                        + " please report the problem to the iCherry Music Manager developers at http://www.notpod.com.",
+                                        "Internal synchronization error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         continue;
                     }
 
@@ -598,7 +605,7 @@ namespace Notpod
                     synchronizer.SynchronizeDevice((IITUserPlaylist)playlist, drive, device);
 
                 }
-                                
+                
             }
             catch (Exception ex)
             {
@@ -621,9 +628,9 @@ namespace Notpod
         }
 
         private void OnSynchronizeComplete(object sender)
-        {            
+        {
             if (configuration.ShowNotificationPopups)
-                itaTray.ShowBalloonTip(5, "Synchronize complete", "Your device was successfully synchronized with iTunes.", ToolTipIcon.Info);
+                itaTray.ShowBalloonTip(5, "Synchronize complete", "Your device was successfully synchronized.", ToolTipIcon.Info);
         }
 
         private void OnSynchronizeCancelled(object sender)
@@ -641,36 +648,6 @@ namespace Notpod
         private void menuAgentExit_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        /// <summary>
-        /// Event handler for Help->About
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void menuHelpAbout_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Event handler for the Help->Online documentation menu item.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void menuHelpOnlineDoc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuAgentConfigure_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuAgentFormat_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("WARNING! This will delete all music on the device and will synchronize your device with the current playlist for that device in iTunes.\n\nContinue?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
         private void ctxTrayExit_Click(object sender, EventArgs e)
@@ -707,7 +684,7 @@ namespace Notpod
         private void ctxTrayHelp_Click(object sender, EventArgs e)
         {
             //Open URL in default browser
-            ProcessStartInfo info = new ProcessStartInfo("http://www.notpod.com/support/icherry");
+            ProcessStartInfo info = new ProcessStartInfo("http://www.icherrystore.com/musicmanager");
             info.Verb = "open";
             Process.Start(info);
         }
@@ -730,8 +707,8 @@ namespace Notpod
         /// <param name="path">Path to check.</param>
         /// <returns>False if all is good, true if the provided path might be a system drive.</returns>
         private bool CheckIfSystemDrive(string drive)
-        {                                   
-            string[] warnOnPatterns = new string[] { "WINDOWS\\system32", "WINNT\\system32", "Users", 
+        {
+            string[] warnOnPatterns = new string[] { "WINDOWS\\system32", "WINNT\\system32", "Users",
                 "Documents and Settings"};
             
             foreach (string pattern in warnOnPatterns)
@@ -747,15 +724,15 @@ namespace Notpod
         }
         
         /// <summary>
-        /// Check if device drive may be iTunes library folder. This could happen in case 
+        /// Check if device drive may be iTunes library folder. This could happen in case
         /// the user misconfigure the device and this check should help prevent loss of data.
         /// </summary>
         /// <param name="drive"></param>
         /// <returns></returns>
-        private bool CheckIfiTunesLibrary(string drive) 
+        private bool CheckIfiTunesLibrary(string drive)
         {
             string libraryPath = itunes.LibraryXMLPath;
-            if(libraryPath == null) 
+            if(libraryPath == null)
             {
                 return false;
             }

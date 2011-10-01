@@ -224,8 +224,6 @@
   <ItemGroup>
     <None Include="DeviceConfiguration.xsd" />
     <None Include="ItaConfiguration.xsd" />
-    <None Include="Resources\ita48x48.png" />
-    <None Include="Resources\about-img.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -45,8 +45,7 @@ namespace Notpod
         	// itaTray
         	// 
         	this.itaTray.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-        	this.itaTray.BalloonTipText = "You may now attach compatible devices to your system. They will appear in iTunes " +
-        	"as playlists where you can manage their tracks.";
+        	this.itaTray.BalloonTipText = "You may now attach compatible devices to your system.";
         	this.itaTray.BalloonTipTitle = "iCherry Music Manager is now running";
         	this.itaTray.ContextMenuStrip = this.contextTray;
         	this.itaTray.Icon = global::Notpod.Properties.Resources.ita_new;

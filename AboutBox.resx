@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Development team:
+    <value>The team:
 ------------------------
-Project lead / developer: Jaran Nilsen
+Founder / Project Lead: Jaran Nilsen
 Developer: Andreas Mettauer
 
 Thanks to:
@@ -133,8 +133,8 @@ Thanks to:
 
 ----------------------
 For more information please visit:
-http://www.notpod.com
+http://www.icherrystore.com/icherrymm
 
-Notpod is not supported by, or associated with Apple Computer Inc. (http://www.apple.com) in any way.</value>
+The iCherry Music Manager is not supported by, or associated with Apple Computer Inc. (http://www.apple.com) in any way.</value>
   </data>
 </root>

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jaran Nilsen")]
 [assembly: AssemblyProduct("iCherry Music Manager")]
-[assembly: AssemblyCopyright("Copyright 2005-2011, Jaran Nilsen")]
+[assembly: AssemblyCopyright("Copyright 2005-2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

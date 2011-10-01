@@ -54,9 +54,9 @@ namespace Notpod
                 if (listDevices.Items.Contains(item))
                 {
                     MessageBox.Show(this, "Duplicate devices with name '" + device.Name
-                        + "' was found. The duplicated items will be removed from the "
-                        + "configuration.", "Invalid configuration", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
+                                    + "' was found. The duplicated items will be removed from the "
+                                    + "configuration.", "Invalid configuration", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
 
                     deviceConfigurationChanged = true;
                     buttonOK.Enabled = true;
@@ -74,8 +74,8 @@ namespace Notpod
                 if (comboSyncPatterns.Items.Contains(pattern.Name))
                 {
                     MessageBox.Show(this, "An inconsistency was found in the synchronize pattern "
-                        + "configuration. The same name was found for two synchronize patterns. One will be deleted.",
-                        "Invalid configuration", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    + "configuration. The same name was found for two synchronize patterns. One will be deleted.",
+                                    "Invalid configuration", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     deviceConfigurationChanged = true;
                     deviceConfiguration.RemoveSyncPattern(pattern);
@@ -109,7 +109,11 @@ namespace Notpod
                 {
                     l.Warn(comex);
 
-                    if (MessageBox.Show(this, "An error occured while getting the list of playlists from iTunes. This may be because iTunes is busy. Do you want to retry?\n\n(" + comex.Message + ")", "Communication error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show(this, "An error occured while getting the list of playlists. "
+                                        + "This may be because one or more applications are busy. "
+                                        + "Do you want to retry?\n\n(" + comex.Message + ")",
+                                        "Communication error", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         retry = true;
                         comboAssociatePlaylist.Items.Clear();
@@ -135,24 +139,7 @@ namespace Notpod
             buttonOK.Enabled = false;
         }
 
-        /// <summary>
-        /// Event handler for when changes are made to the Device file structure combo. 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void comboStructure_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            //Display a warning message about how the change of file structure works and how it 
-            //inflicts any changes on the already managed devices.
-            MessageBox.Show("Note that this setting only applies to devices not already managed "
-                + "by iCherry Music Manager. If you want to change the file structure of a device already "
-                + "synchronized with iCherry Music Manager you will have to clear the music folder of your "
-                + "device, including the '.itastruct' file, in order for iCherry Music Manager to manage "
-                + "the device with the new structure.\n\nFor new devices the new structure setting "
-                + "will be applied upon first iTunes-to-device synchronization.", "Please note",
-                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
+        
         /// <summary>
         /// Event handler for when an item is activated.
         /// </summary>
@@ -272,12 +259,12 @@ namespace Notpod
         private void buttonNew_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this, "Please note that any media present in the folder specified as 'Music location on device' "
-                + "will be deleted upon the first synchronization by iCherry Music Manager, unless "
-                + "this media matches any track added to the device's playlist in iTunes.\n\nIf "
-                + "the media already present on your device is of critical importance, please make sure you take a proper "
-                + "backup, or make sure it is located outside the folder you configure as the "
-                + "'Music location on device'.", "Before you continue...",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            + "will be deleted upon the first synchronization by iCherry Music Manager, unless "
+                            + "this media matches any track added to the device's playlist.\n\nIf "
+                            + "the media already present on your device is of critical importance, please make sure you take a proper "
+                            + "backup, or make sure it is located outside the folder you configure as the "
+                            + "'Music location on device'.", "Before you continue...",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             PrepareForNewDeviceConfiguration();
 
@@ -342,7 +329,7 @@ namespace Notpod
             string mediaroot = textMediaRoot.Text;
             string recognizePattern = textRecognizePattern.Text;
             string associatedPlaylist = (string)comboAssociatePlaylist.SelectedItem;
-                        
+            
             if (deviceName.Length == 0)
             {
                 MessageBox.Show(this, "Please enter a name for the device.", "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -362,7 +349,7 @@ namespace Notpod
             }
             
             
-                        
+            
             Device newDevice = new Device();
             newDevice.Name = deviceName;
             newDevice.MediaRoot = mediaroot;
@@ -429,8 +416,8 @@ namespace Notpod
             if (dlg.ShowDialog() == DialogResult.Cancel)
                 return;
             
-            //This check is to make sure that the application do not throw an exception if a path 
-            //of length less than 3 is selected. Normally this do not occur, but there has been 
+            //This check is to make sure that the application do not throw an exception if a path
+            //of length less than 3 is selected. Normally this do not occur, but there has been
             //reportet incidents where unsupported, special devices have given an empty path in return...
             //See bug report 1443246.
             // https://sourceforge.net/tracker/index.php?func=detail&aid=1443246&group_id=149133&atid=773786
@@ -547,22 +534,22 @@ namespace Notpod
         }
 
         /// <summary>
-        /// Event handler for buttonCreateUniqueFile clicks. Lets the 
-        /// user select a folder and creates a unique file in this folder 
+        /// Event handler for buttonCreateUniqueFile clicks. Lets the
+        /// user select a folder and creates a unique file in this folder
         /// which is used to identify the device.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonCreateUniqueFile_Click(object sender, EventArgs e)
         {
-            // Check that a name for the device has been entered as this is 
+            // Check that a name for the device has been entered as this is
             // used when generating the file.
             if (String.IsNullOrEmpty(textDeviceName.Text))
             {
                 MessageBox.Show(this, "You need to give your device a name " +
-                    "before I can auto-generate the file to recognize it by.",
-                    "Please enter device name", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                                "before I can auto-generate the file to recognize it by.",
+                                "Please enter device name", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 return;
             }
 
@@ -589,9 +576,9 @@ namespace Notpod
             catch (Exception ex)
             {
                 MessageBox.Show(this, "I was unable to create a file for identifying the device in the folder "
-                    + folder + ". The name of the file I tried to create was \"" + fileName
-                    + "\".\n\nError reported: " + ex.Message, "Unable to create file", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                                + folder + ". The name of the file I tried to create was \"" + fileName
+                                + "\".\n\nError reported: " + ex.Message, "Unable to create file", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 
