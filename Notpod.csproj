@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Notpod</RootNamespace>
     <AssemblyName>Notpod</AssemblyName>
-    <ApplicationIcon>Resources\ita-new.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icherry-icon.ico</ApplicationIcon>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <FileUpgradeFlags>
     </FileUpgradeFlags>

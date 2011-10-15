@@ -48,7 +48,7 @@ namespace Notpod
         	this.itaTray.BalloonTipText = "You may now attach compatible devices to your system.";
         	this.itaTray.BalloonTipTitle = "iCherry Music Manager is now running";
         	this.itaTray.ContextMenuStrip = this.contextTray;
-        	this.itaTray.Icon = global::Notpod.Properties.Resources.ita_new;
+        	this.itaTray.Icon = global::Notpod.Properties.Resources.icherry_icon;
         	this.itaTray.Text = "iCherry Music Manager";
         	this.itaTray.Visible = true;
         	// 
@@ -124,7 +124,7 @@ namespace Notpod
         	this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         	this.ClientSize = new System.Drawing.Size(238, 15);
         	this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-        	this.Icon = global::Notpod.Properties.Resources.ita_new;
+        	this.Icon = global::Notpod.Properties.Resources.icherry_icon;
         	this.MaximizeBox = false;
         	this.Name = "MainForm";
         	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

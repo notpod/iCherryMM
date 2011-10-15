@@ -108,7 +108,7 @@ namespace Notpod
         	this.Controls.Add(this.progressSynchronize);
         	this.DoubleBuffered = true;
         	this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-        	this.Icon = global::Notpod.Properties.Resources.ita_new;
+        	this.Icon = global::Notpod.Properties.Resources.icherry_icon;
         	this.MaximizeBox = false;
         	this.MinimizeBox = false;
         	this.Name = "StandardSynchronizerForm";
