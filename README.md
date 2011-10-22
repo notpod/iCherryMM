@@ -1,4 +1,4 @@
-Notpod 1.x
-==========
+iCherry Music Manager 1.0
+==========================
 
-This is the codebase for Notpod versions 1.x - forked from the previous iTunes Agent 1.3 codebase.
+This is the codebase for iCherry Music Manager. 
