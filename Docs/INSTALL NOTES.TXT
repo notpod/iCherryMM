@@ -1,13 +1,13 @@
 Installation Notes
 ===============================
 
-iCherry Music Manager (Application) is a modified and rebranded version of an existing media synchronization software by Jaran Nilsen, prepared for distribution with the iCherry media player. 
+ICherry Music Manager (Application) is a modified and rebranded version of an existing media synchronization software by Jaran Nilsen, prepared for distribution with the ICherry media player. 
 
-Source code for the iCherry Music Manager is available with this installer, or from http://www.icherrystore.com/musicmanager
+Source code for the ICherry Music Manager is available with this installer, or from http://www.icherrystore.com/musicmanager
 
 Please ensure you always back up your music library and other important files on your computer. Before continuing with this installation, please make sure you save any open files to prevent loss of data in case a computer reboot is necessary. It's always important to back up both your computer and portable devices.
 
-The Application is distributed "as is", and the Application's developer or the Producer and Distributor of the iCherry media player takes no responsiblity for damages or lost files due to the use of the Application. If uncertain about proper use of the Application, please refer to the support website at http://www.icherrystore.com/musicmanager.
+The Application is distributed "as is", and the Application's developer or the Producer and Distributor of the ICherry media player takes no responsiblity for damages or lost files due to the use of the Application. If uncertain about proper use of the Application, please refer to the support website at http://www.icherrystore.com/musicmanager.
 
 Before starting to use the the Application with your device, it should not contain any music files. This will ensure that the device is properly synchronized. Any music files on the device, in the configured music folder, will be deleted at first synchronization unless their name match one of the tracks you put in the playlist for the device.
 

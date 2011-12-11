@@ -1,5 +1,5 @@
 # Installer script for Notpod
-!define PRODUCT_NAME "iCherry Music Manager"
+!define PRODUCT_NAME "ICherry Music Manager"
 !define PRODUCT_VERSION "1.0"
 !define MUI_ABORTWARNING
 !define MUI_ICON ".\Resources\icherry-icon.ico"
@@ -41,13 +41,13 @@ BrandingText "${PRODUCT_NAME}"
 
 
         SetOutPath "$INSTDIR"
-        File /oname=iCherryMusicManager.exe "bin\Release\Notpod.exe"
+        File /oname=ICherryMusicManager.exe "bin\Release\Notpod.exe"
         File "bin\Release\log4net.dll"
         File "bin\Release\logging.xml"
         File "bin\Release\Interop.iTunesLib.dll"
         File "LICENSE.TXT"
-        createShortCut "$SMPROGRAMS\iCherry Music Manager\iCherry Music Manager.lnk" "$INSTDIR\iCherryMusicManager.exe"
-        createShortCut "$SMPROGRAMS\iCherry Music Manager\Uninstall.lnk" "$INSTDIR\uninstaller.exe"
+        createShortCut "$SMPROGRAMS\ICherry Music Manager\ICherry Music Manager.lnk" "$INSTDIR\ICherryMusicManager.exe"
+        createShortCut "$SMPROGRAMS\ICherry Music Manager\Uninstall.lnk" "$INSTDIR\uninstaller.exe"
         
         # define uninstaller name
         writeUninstaller $INSTDIR\uninstaller.exe
@@ -60,7 +60,7 @@ BrandingText "${PRODUCT_NAME}"
     delete $INSTDIR\uninstaller.exe
 
     # now delete installed file
-    delete $INSTDIR\iCherryMusicManager.exe
+    delete $INSTDIR\ICherryMusicManager.exe
     delete $INSTDIR\log4net.dll
     delete $INSTDIR\logging.xml
     delete $INSTDIR\LICENSE.txt
