@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("iCherry Music Manager")]
+[assembly: AssemblyTitle("ICherry Music Manager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jaran Nilsen")]
-[assembly: AssemblyProduct("iCherry Music Manager")]
+[assembly: AssemblyProduct("ICherry Music Manager")]
 [assembly: AssemblyCopyright("Copyright 2005-2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

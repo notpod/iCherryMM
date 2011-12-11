@@ -259,7 +259,7 @@ namespace Notpod
         private void buttonNew_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this, "Please note that any media present in the folder specified as 'Music location on device' "
-                            + "will be deleted upon the first synchronization by iCherry Music Manager, unless "
+                            + "will be deleted upon the first synchronization by ICherry Music Manager, unless "
                             + "this media matches any track added to the device's playlist.\n\nIf "
                             + "the media already present on your device is of critical importance, please make sure you take a proper "
                             + "backup, or make sure it is located outside the folder you configure as the "

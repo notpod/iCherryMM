@@ -113,7 +113,7 @@ namespace Notpod
         	this.MinimizeBox = false;
         	this.Name = "StandardSynchronizerForm";
         	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        	this.Text = "iCherry Music Manager is synchronizing...";
+        	this.Text = "ICherry Music Manager is synchronizing...";
         	this.Activated += new System.EventHandler(this.StandardSynchronizerForm_Activated);
         	this.ResumeLayout(false);
         	this.PerformLayout();

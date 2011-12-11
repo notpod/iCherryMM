@@ -99,7 +99,7 @@ namespace Notpod
         	this.checkWarnOnSystemDrives.Size = new System.Drawing.Size(203, 17);
         	this.checkWarnOnSystemDrives.TabIndex = 3;
         	this.checkWarnOnSystemDrives.Text = "Warn if device looks like system drive";
-        	this.toolTip.SetToolTip(this.checkWarnOnSystemDrives, "Enabling this will make iCherry Music Manager check if your device seems to be a " +
+        	this.toolTip.SetToolTip(this.checkWarnOnSystemDrives, "Enabling this will make ICherry Music Manager check if your device seems to be a " +
         	        	"system drive.");
         	this.checkWarnOnSystemDrives.UseVisualStyleBackColor = true;
         	this.checkWarnOnSystemDrives.Click += new System.EventHandler(this.checkWarnOnSystemDrives_Click);
@@ -174,7 +174,7 @@ namespace Notpod
         	this.buttonCreateUniqueFile.Size = new System.Drawing.Size(65, 23);
         	this.buttonCreateUniqueFile.TabIndex = 14;
         	this.buttonCreateUniqueFile.Text = "Create";
-        	this.toolTip.SetToolTip(this.buttonCreateUniqueFile, "Choose the location of your device and iCherry Music Manager will create a unique" +
+        	this.toolTip.SetToolTip(this.buttonCreateUniqueFile, "Choose the location of your device and ICherry Music Manager will create a unique" +
         	        	" file for you.");
         	this.buttonCreateUniqueFile.UseVisualStyleBackColor = true;
         	this.buttonCreateUniqueFile.Click += new System.EventHandler(this.buttonCreateUniqueFile_Click);
@@ -182,14 +182,14 @@ namespace Notpod
         	// textRecognizePattern
         	// 
         	this.textRecognizePattern.Enabled = false;
-        	this.helpProvider.SetHelpString(this.textRecognizePattern, "The name of a file or a folder which iCherry Music Manager should use to recogniz" +
+        	this.helpProvider.SetHelpString(this.textRecognizePattern, "The name of a file or a folder which ICherry Music Manager should use to recogniz" +
         	        	"e this device. The path name should be relative to the root of the device. ");
         	this.textRecognizePattern.Location = new System.Drawing.Point(140, 91);
         	this.textRecognizePattern.Name = "textRecognizePattern";
         	this.helpProvider.SetShowHelp(this.textRecognizePattern, true);
         	this.textRecognizePattern.Size = new System.Drawing.Size(283, 20);
         	this.textRecognizePattern.TabIndex = 8;
-        	this.toolTip.SetToolTip(this.textRecognizePattern, "A folder or file which iCherry Music Manager will use to identify your device. Ha" +
+        	this.toolTip.SetToolTip(this.textRecognizePattern, "A folder or file which ICherry Music Manager will use to identify your device. Ha" +
         	        	"s to be unique for your device, i.e. MySonyPsP.txt");
         	// 
         	// textMediaRoot
@@ -393,7 +393,7 @@ namespace Notpod
         	this.MinimizeBox = false;
         	this.Name = "ConfigurationForm";
         	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        	this.Text = "iCherry Music Manager Preferences";
+        	this.Text = "ICherry Music Manager Preferences";
         	this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfigurationForm_FormClosing);
         	this.groupBox1.ResumeLayout(false);
         	this.groupBox1.PerformLayout();
